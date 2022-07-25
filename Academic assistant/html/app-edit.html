@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>Invoice Edit - Vuexy - Bootstrap HTML admin template</title>
+    <link rel="apple-touch-icon" href="../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/extensions/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/pages/app-invoice.css">
+        <link rel="stylesheet" href="../app-assets/css/pages/app-edit.css">
+        <link rel="stylesheet" type="text/css" href="../app-assets/css/plugins/extensions/ext-component-toastr.css">
+
+
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static   menu-collapsed" data-open="click" data-menu="vertical-menu-modern" data-col="">
+
+    <!-- BEGIN: Header-->
+    <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
+        <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="#"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav bookmark-icons">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon" data-feather="mail"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Chat"><i class="ficon" data-feather="message-square"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Calendar"><i class="ficon" data-feather="calendar"></i></a></li>
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Todo"><i class="ficon" data-feather="check-square"></i></a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning" data-feather="star"></i></a>
+                        <div class="bookmark-input search-input">
+                            <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                            <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0" data-search="search">
+                            <ul class="search-list search-list-bookmark"></ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav navbar-nav align-items-center ms-auto">
+                
+                <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+                <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
+                    <div class="search-input">
+                        <div class="search-input-icon"><i data-feather="search"></i></div>
+                        <input class="form-control input" type="text" placeholder="尽情探索" tabindex="-1" data-search="search">
+                        <div class="search-input-close"><i data-feather="x"></i></div>
+                        <ul class="search-list search-list-main"></ul>
+                    </div>
+                </li>
+            
+                <li class="nav-item dropdown dropdown-notification me-25"><a class="nav-link" href="#" data-bs-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge rounded-pill bg-danger badge-up">5</span></a>
+                    <ul class="dropdown-menu dropdown-menu-media dropdown-menu-end">
+                        <li class="dropdown-menu-header">
+                            <div class="dropdown-header d-flex">
+                                <h4 class="notification-title mb-0 me-auto">Notifications</h4>
+                                <div class="badge rounded-pill badge-light-primary">6 New</div>
+                            </div>
+                        </li>
+                        <li class="scrollable-container media-list"><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar"><img src="../app-assets/images/portrait/small/avatar-s-3.jpg" alt="avatar" width="32" height="32"></div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">New message</span>&nbsp;received</p><small class="notification-text"> You have 10 unread messages</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content">MD</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Revised Order 👋</span>&nbsp;checkout</p><small class="notification-text"> MD Inc. order updated</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-item d-flex align-items-center">
+                                <h6 class="fw-bolder me-auto mb-0">System Notifications</h6>
+                                <div class="form-check form-check-primary form-switch">
+                                    <input class="form-check-input" id="systemNotification" type="checkbox" checked="">
+                                    <label class="form-check-label" for="systemNotification"></label>
+                                </div>
+                            </div><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-danger">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="x"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Server down</span>&nbsp;registered</p><small class="notification-text"> USA Server is down due to high CPU usage</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-success">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="check"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">Sales report</span>&nbsp;generated</p><small class="notification-text"> Last month sales report generated</small>
+                                    </div>
+                                </div>
+                            </a><a class="d-flex" href="#">
+                                <div class="list-item d-flex align-items-start">
+                                    <div class="me-1">
+                                        <div class="avatar bg-light-warning">
+                                            <div class="avatar-content"><i class="avatar-icon" data-feather="alert-triangle"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-body flex-grow-1">
+                                        <p class="media-heading"><span class="fw-bolder">High memory</span>&nbsp;usage</p><small class="notification-text"> BLR Server using high memory</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-footer"><a class="btn btn-primary w-100" href="#">Read all notifications</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name fw-bolder">苏曈</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> 个人页面</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> 聊天</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> 编辑账户</a><a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> 订阅会员</a><a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> 帮助</a><a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="power"></i> 登出</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="main-search-list-defaultlist d-none">
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Files</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="../app-assets/images/icons/xls.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;17kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="../app-assets/images/icons/jpg.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">52 JPG file Generated</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;11kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="../app-assets/images/icons/pdf.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">25 PDF File Uploaded</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;150kb</small>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between w-100" href="app-file-manager.html">
+                <div class="d-flex">
+                    <div class="me-75"><img src="../app-assets/images/icons/doc.png" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna_Strong.doc</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div><small class="search-data-size me-50 text-muted">&apos;256kb</small>
+            </a></li>
+        <li class="d-flex align-items-center"><a href="#">
+                <h6 class="section-label mt-75 mb-0">Members</h6>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="../app-assets/images/portrait/small/avatar-s-8.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">John Doe</p><small class="text-muted">UI designer</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="../app-assets/images/portrait/small/avatar-s-1.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Michal Clark</p><small class="text-muted">FontEnd Developer</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="../app-assets/images/portrait/small/avatar-s-14.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Milena Gibson</p><small class="text-muted">Digital Marketing Manager</small>
+                    </div>
+                </div>
+            </a></li>
+        <li class="auto-suggestion"><a class="d-flex align-items-center justify-content-between py-50 w-100" href="app-user-view-account.html">
+                <div class="d-flex align-items-center">
+                    <div class="avatar me-75"><img src="../app-assets/images/portrait/small/avatar-s-6.jpg" alt="png" height="32"></div>
+                    <div class="search-data">
+                        <p class="search-data-title mb-0">Anna Strong</p><small class="text-muted">Web Designer</small>
+                    </div>
+                </div>
+            </a></li>
+    </ul>
+    <ul class="main-search-list-defaultlist-other-list d-none">
+        <li class="auto-suggestion justify-content-between"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="me-75" data-feather="alert-circle"></span><span>No results found.</span></div>
+            </a></li>
+    </ul>
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item me-auto"><a class="navbar-brand" href="../html/ltr/vertical-collapsed-menu-template/index.html"><span class="brand-logo">
+                            <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                                <defs>
+                                    <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
+                                        <stop stop-color="#000000" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                    <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
+                                        <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                                        <stop stop-color="#FFFFFF" offset="100%"></stop>
+                                    </lineargradient>
+                                </defs>
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Artboard" transform="translate(-400.000000, -178.000000)">
+                                        <g id="Group" transform="translate(400.000000, 178.000000)">
+                                            <path class="text-primary" id="Path" d="M-5.68434189e-14,2.84217094e-14 L39.1816085,2.84217094e-14 L69.3453773,32.2519224 L101.428699,2.84217094e-14 L138.784583,2.84217094e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L6.71554594,44.4188507 C2.46876683,39.9813776 0.345377275,35.1089553 0.345377275,29.8015838 C0.345377275,24.4942122 0.230251516,14.560351 -5.68434189e-14,2.84217094e-14 Z" style="fill:currentColor"></path>
+                                            <path id="Path1" d="M69.3453773,32.2519224 L101.428699,1.42108547e-14 L138.784583,1.42108547e-14 L138.784199,29.8015838 C137.958931,37.3510206 135.784352,42.5567762 132.260463,45.4188507 C128.736573,48.2809251 112.33867,64.5239941 83.0667527,94.1480575 L56.2750821,94.1480575 L32.8435758,70.5039241 L69.3453773,32.2519224 Z" fill="url(#linearGradient-1)" opacity="0.2"></path>
+                                            <polygon id="Path-2" fill="#000000" opacity="0.049999997" points="69.3922914 32.4202615 32.8435758 70.5039241 54.0490008 16.1851325"></polygon>
+                                            <polygon id="Path-21" fill="#000000" opacity="0.099999994" points="69.3922914 32.4202615 32.8435758 70.5039241 58.3683556 20.7402338"></polygon>
+                                            <polygon id="Path-3" fill="url(#linearGradient-2)" opacity="0.099999994" points="101.428699 0 83.0667527 94.1480575 130.378721 47.0740288"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg></span>
+                        <h2 class="brand-text">学术格子</h2>
+                    </a></li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+                <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">资料夹&amp; 回收站</span><i data-feather="more-horizontal"></i>
+                </li>              <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">成果管理</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="app-lunwen.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">论文</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">上传新增</span></a>
+                    <ul class="menu-content">
+                        <li ><a class="d-flex align-items-center" href="app-edit-govresearch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="govresearch">纵向课题</span></a>
+                        </li>
+                        <li ><a class="d-flex align-items-center" href="app-edit-resarch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="resarch">横向课题</span></a>
+                        </li>
+                        <li class="active"><a class="d-flex align-items-center" href="app-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">论文</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-edit-software.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">软件著作权</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-edit-patent.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">专利</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-edit-award.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="huojiang">个人获奖</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="app-edit-stuaward.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="stuhuojiang">学生获奖</span></a>
+                        </li>
+                        <li ><a class="d-flex align-items-center" href="app-edit-book.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="book">著作</span></a>
+                        </li>
+                        <li ><a class="d-flex align-items-center" href="app-edit-report.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="report">新闻报道</span></a>
+                        </li>
+                        <li ><a class="d-flex align-items-center" href="app-edit-certificate.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="certificate">档案资料</span></a>
+                        </li>
+                        <li ><a class="d-flex align-items-center" href="app-edit-others.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="others">其他</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+               
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">学术助手</span></a>
+                    <ul class="menu-content">
+                        
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Pages">Pages</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-account-settings-account.html"><span class="menu-item text-truncate" data-i18n="Account">Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-security.html"><span class="menu-item text-truncate" data-i18n="Security">Security</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-billing.html"><span class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Billings &amp; Plans</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-notifications.html"><span class="menu-item text-truncate" data-i18n="Notifications">Notifications</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-account-settings-connections.html"><span class="menu-item text-truncate" data-i18n="Connections">Connections</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-profile.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Profile">Profile</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-faq.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="FAQ">FAQ</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-knowledge-base.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Knowledge Base">Knowledge Base</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-pricing.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pricing">Pricing</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="page-license.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="License">等级权益&协议</span></a>
+                        </li>
+
+
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Mail Template">Mail Template</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-welcome.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Welcome">Welcome</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-reset-password.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-verify-email.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-deactivate-account.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Deactivate Account">Deactivate Account</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-invoice.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Invoice">Invoice</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="https://pixinvent.com/demo/vuexy-mail-template/mail-promotional.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Promotional">Promotional</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Miscellaneous">Miscellaneous</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="page-misc-coming-soon.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Coming Soon">Coming Soon</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-not-authorized.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Not Authorized">Not Authorized</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-under-maintenance.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Maintenance">Maintenance</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="page-misc-error.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Error">Error</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user-check"></i><span class="menu-title text-truncate" data-i18n="Authentication">Authentication</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Login">Login</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-login-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-login-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Register">Register</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-register-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-register-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-register-multisteps.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Multi-Steps">Multi-Steps</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Forgot Password">Forgot Password</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-forgot-password-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-forgot-password-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Reset Password">Reset Password</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-reset-password-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-reset-password-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Verify Email">Verify Email</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-verify-email-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-verify-email-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Two Steps">Two Steps</span></a>
+                            <ul class="menu-content">
+                                <li><a class="d-flex align-items-center" href="auth-two-steps-basic.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                                </li>
+                                <li><a class="d-flex align-items-center" href="auth-two-steps-cover.html" target="_blank"><span class="menu-item text-truncate" data-i18n="Cover">Cover</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" navigation-header"><span data-i18n="User Interface">User Interface</span><i data-feather="more-horizontal"></i>
+                </li>
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="ui-feather.html"><i data-feather="eye"></i><span class="menu-title text-truncate" data-i18n="Feather">Feather</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i><span class="menu-title text-truncate" data-i18n="Card">Card</span><span class="badge badge-light-success rounded-pill ms-auto me-1">New</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="card-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-advance.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advance">Advance</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-statistics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Statistics">Statistics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="card-actions.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Card Actions">Card Actions</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="briefcase"></i><span class="menu-title text-truncate" data-i18n="Components">Components</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="component-accordion.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Accordion">Accordion</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Alerts">Alerts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-avatar.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Avatar">Avatar</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Badges">Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-breadcrumbs.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Breadcrumbs">Breadcrumbs</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-buttons.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Buttons">Buttons</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-carousel.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Carousel">Carousel</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-collapse.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapse">Collapse</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-divider.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Divider">Divider</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-dropdowns.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Dropdowns">Dropdowns</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-list-group.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List Group">List Group</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-modals.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Modals">Modals</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-navs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Navs Component">Navs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-offcanvas.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Offcanvas">Offcanvas</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pagination.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pagination">Pagination</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pill-badges.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pill Badges">Pill Badges</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-pills-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pills Component">Pills Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-popovers.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Popovers">Popovers</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-progress.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Progress">Progress</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-spinner.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Spinner">Spinner</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tabs-component.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tabs Component">Tabs Component</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-timeline.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Timeline">Timeline</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-bs-toast.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toasts">Toasts</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="component-tooltips.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tooltips">Tooltips</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="box"></i><span class="menu-title text-truncate" data-i18n="Extensions">Extensions</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="ext-component-sweet-alerts.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sweet Alert">Sweet Alert</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-blockui.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Block UI">BlockUI</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-toastr.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Toastr">Toastr</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-sliders.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Sliders">Sliders</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-drag-drop.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Drag &amp; Drop">Drag &amp; Drop</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tour.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tour">Tour</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-clipboard.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Clipboard">Clipboard</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-media-player.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Media player">Media Player</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-context-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Context Menu">Context Menu</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-swiper.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="swiper">Swiper</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-tree.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Tree">Tree</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-ratings.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Ratings">Ratings</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="ext-component-i18n.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="l18n">l18n</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" navigation-header"><span data-i18n="Forms &amp; Tables">Forms &amp; Tables</span><i data-feather="more-horizontal"></i>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span class="menu-title text-truncate" data-i18n="Form Elements">Form Elements</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="form-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input">Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-groups.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Groups">Input Groups</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-input-mask.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Input Mask">Input Mask</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-textarea.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Textarea">Textarea</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-checkbox.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Checkbox">Checkbox</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-radio.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Radio">Radio</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-custom-options.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Custom Options">Custom Options</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-switch.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Switch">Switch</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-select.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Select">Select</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-number-input.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Number Input">Number Input</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-file-uploader.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="File Uploader">File Uploader</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-quill-editor.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Quill Editor">Quill Editor</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="form-date-time-picker.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Date &amp; Time Picker">Date &amp; Time Picker</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Datatable">Datatable</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="table-datatable-basic.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Basic">Basic</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="table-datatable-advanced.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Advanced">Advanced</span></a>
+                        </li>
+                    </ul>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper container-xxl p-0">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <section class="invoice-edit-wrapper">
+                    <div class="row invoice-edit">
+                        <!-- Invoice Edit Left starts -->
+                        <div class="col-xl-9 col-md-8 col-12">
+                            <div class="card invoice-preview-card">
+
+
+
+
+                                <!-- Address and Contact starts -->
+                                <div class="card-body invoice-padding pt-0">
+                                    <body>
+
+                                        <!-- 导航头部 -->
+                                        <script type="text/javascript">
+                                            // 当前登录用户信息
+                                            window.CurrentUser = {
+                                                "id": "153361",
+                                                "username": "",
+                                                "created": "1641864380",
+                                                "updated": "1641864923",
+                                                "nickname": "\u5b66\u8005_bd50c6",
+                                                "en_nickname": "",
+                                                "email": null,
+                                                "mobile": "13207704138",
+                                                "avatar": "https:\/\/img.okay.do\/acagrid\/static\/images\/default\/avatar_200.png",
+                                                "sex": "0",
+                                                "vip": "0",
+                                                "status": "0",
+                                                "school_id": "0",
+                                                "school_name": "",
+                                                "titles": "",
+                                                "timeline_on": "0",
+                                                "email_checked": "0",
+                                                "position": "",
+                                                "birthdate": "",
+                                                "degree": "",
+                                                "title": "0",
+                                                "tutor": null,
+                                                "college_name": "",
+                                                "department_name": "",
+                                                "pinyin": "xzb|xuezhebd50c6",
+                                                "wx_remark_name": null,
+                                                "mobile_checked": "1",
+                                                "is_spam_user": "0",
+                                                "refresh_token": null,
+                                                "merge_to": "0",
+                                                "confirm_name": "0",
+                                                "title_text": "",
+                                                "upgraded": 0,
+                                                "invite_code": "2519d08f",
+                                                "has_password": 1
+                                            };
+                                            window.CurrentCollege = null;
+                                        </script>
+                                 
+                                        <div id="min_height">
+                                
+                                
+                                
+                                            <div id="content" class="container"></div>
+                                
+                                            <script type='text/javascript'>
+                                                window.SrcmsData = {
+                                                    "url": "/static/application/",
+                                                    "doc": {
+                                                        "title": "",
+                                                        "keyword": "",
+                                                        "created": "",
+                                                        "updated": "",
+                                                        "doc_read": "1",
+                                                        "doc_sortby": "0",
+                                                        "doc_view": "0",
+                                                        "user_id": "153361",
+                                                        "doc_status": "0",
+                                                        "mod_type": "1",
+                                                        "removed": "0",
+                                                        "expunged": "0",
+                                                        "display_status": "1",
+                                                        "is_custom_type": "0",
+                                                        "rejected": "0",
+                                                        "is_private": "1",
+                                                        "typeinfo": {
+                                                            "id": "1",
+                                                            "mod_title": "\u8bba\u6587",
+                                                            "mod_desc": "\u8bf7\u4e0a\u4f20\u60a8\u53d1\u8868\u7684\u8bba\u6587\u7684\u91cd\u8981\u4fe1\u606f\uff1a\u5c01\u9762 \/ \u76ee\u5f55 \/ \u6587\u7ae0 \/ \u5c01\u5e95\uff0c\u68c0\u7d22\u62a5\u544a\u7b49\u3002 ",
+                                                            "mod_sortby": "1",
+                                                            "mod_db_table": "paper",
+                                                            "created": "1477297435",
+                                                            "updated": "1498184792",
+                                                            "mod_class": "DocumentPaper",
+                                                            "status": "1",
+                                                            "ipt_title": ""
+                                                        },
+                                                        "doc_id": "1926290",
+                                                        "desc": ""
+                                                    },
+                                                    "model": {
+                                                        "id": "1",
+                                                        "mod_title": "\u8bba\u6587",
+                                                        "mod_desc": "\u8bf7\u4e0a\u4f20\u60a8\u53d1\u8868\u7684\u8bba\u6587\u7684\u91cd\u8981\u4fe1\u606f\uff1a\u5c01\u9762 \/ \u76ee\u5f55 \/ \u6587\u7ae0 \/ \u5c01\u5e95\uff0c\u68c0\u7d22\u62a5\u544a\u7b49\u3002 ",
+                                                        "mod_sortby": "1",
+                                                        "mod_db_table": "paper",
+                                                        "created": "1477297435",
+                                                        "updated": "1498184792",
+                                                        "mod_class": "DocumentPaper",
+                                                        "status": "1",
+                                                        "ipt_title": "\u8bba\u6587\u540d"
+                                                    },
+                                                   
+                                                    "authors": [],
+                                                    "form": [{
+                                                        "type": "hidden",
+                                                        "name": "mod_tname",
+                                                        "text": "",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "paper",
+                                                        "is_validate": 0,
+                                                        "validate": "",
+                                                        "error_msg": "",
+                                                        "is_table_view": 0,
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "doc_id",
+                                                        "text": "",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "1926290",
+                                                        "is_validate": 0,
+                                                        "validate": "",
+                                                        "error_msg": "",
+                                                        "is_table_view": 0,
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "title",
+                                                        "text": "\u8bba\u6587\u540d",
+                                                        "placeholder": "\u8bf7\u586b\u5199\u6807\u9898",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "1",
+                                                        "validate": "{\"type\":\"null\"}",
+                                                        "error_msg": "\u8bf7\u586b\u5199\u6807\u9898",
+                                                        "is_table_view": 0,
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "radio",
+                                                        "name": "paper_type",
+                                                        "text": "\u8bba\u6587\u7c7b\u578b",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u671f\u520a\u8bba\u6587",
+                                                            "txt": "\u671f\u520a\u8bba\u6587"
+                                                        }, {
+                                                            "val": "\u4f1a\u8bae\u8bba\u6587\u96c6",
+                                                            "txt": "\u4f1a\u8bae\u8bba\u6587\u96c6"
+                                                        }, {
+                                                            "val": "\u62a5\u7eb8",
+                                                            "txt": "\u62a5\u7eb8"
+                                                        }, {
+                                                            "val": "\u5b66\u4f4d\u8bba\u6587",
+                                                            "txt": "\u5b66\u4f4d\u8bba\u6587"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "1",
+                                                        "validate": "{\"type\":\"null\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "radio",
+                                                        "name": "paper_field",
+                                                        "text": "\u8bba\u6587\u9886\u57df",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u79d1\u7814(\u793e\u79d1)",
+                                                            "txt": "\u79d1\u7814(\u793e\u79d1)"
+                                                        }, {
+                                                            "val": "\u79d1\u7814(\u81ea\u79d1)",
+                                                            "txt": "\u79d1\u7814(\u81ea\u79d1)"
+                                                        }, {
+                                                            "val": "\u6559\u80b2",
+                                                            "txt": "\u6559\u80b2"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "select",
+                                                        "name": "my_rank",
+                                                        "text": "\u672c\u4eba\u6392\u540d",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "0",
+                                                            "txt": "\u65e0"
+                                                        }, {
+                                                            "val": "1",
+                                                            "txt": "1"
+                                                        }, {
+                                                            "val": "2",
+                                                            "txt": "2"
+                                                        }, {
+                                                            "val": "3",
+                                                            "txt": "3"
+                                                        }, {
+                                                            "val": "4",
+                                                            "txt": "4"
+                                                        }, {
+                                                            "val": "5",
+                                                            "txt": "5"
+                                                        }, {
+                                                            "val": "6",
+                                                            "txt": "6"
+                                                        }, {
+                                                            "val": "7",
+                                                            "txt": "7"
+                                                        }, {
+                                                            "val": "8",
+                                                            "txt": "8"
+                                                        }, {
+                                                            "val": "9",
+                                                            "txt": "9"
+                                                        }, {
+                                                            "val": "10",
+                                                            "txt": "10"
+                                                        }, {
+                                                            "val": "11",
+                                                            "txt": "11"
+                                                        }, {
+                                                            "val": "12",
+                                                            "txt": "12"
+                                                        }, {
+                                                            "val": "13",
+                                                            "txt": "13"
+                                                        }, {
+                                                            "val": "14",
+                                                            "txt": "14"
+                                                        }, {
+                                                            "val": "15",
+                                                            "txt": "15"
+                                                        }, {
+                                                            "val": "\u5176\u4ed6",
+                                                            "txt": "\u5176\u4ed6"
+                                                        }],
+                                                        "value": "1",
+                                                        "is_validate": "1",
+                                                        "validate": "{\"type\":\"null\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "\u8bf7\u586b\u5199\u5b8c\u6574",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "radio",
+                                                        "name": "cor_author",
+                                                        "text": "\u901a\u8baf\u4f5c\u8005",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u662f",
+                                                            "txt": "\u662f"
+                                                        }, {
+                                                            "val": "\u5426",
+                                                            "txt": "\u5426"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "radio",
+                                                        "name": "common_first",
+                                                        "text": "\u5171\u540c\u4e00\u4f5c",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u5426",
+                                                            "txt": "\u5426"
+                                                        }, {
+                                                            "val": "\u662f",
+                                                            "txt": "\u662f"
+                                                        }],
+                                                        "value": "\u5426",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "radio",
+                                                        "name": "write_alone",
+                                                        "text": "\u72ec\u8457",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u5426",
+                                                            "txt": "\u5426"
+                                                        }, {
+                                                            "val": "\u662f",
+                                                            "txt": "\u662f"
+                                                        }],
+                                                        "value": "\u5426",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "jurnal",
+                                                        "text": "\u520a\u7269\u540d\u79f0",
+                                                        "placeholder": "\u5982\uff1a\u88c5\u9970",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "1",
+                                                        "validate": "{\"type\":\"null\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "\u8bf7\u586b\u5199\u5b8c\u6574",
+                                                        "is_table_view": "1",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "checkbox",
+                                                        "name": "jurnal_lever",
+                                                        "text": "\u6536\u5f55\u68c0\u7d22",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "SCI",
+                                                            "txt": "SCI",
+                                                            "weight": "1"
+                                                        }, {
+                                                            "val": "SCIE",
+                                                            "txt": "SCIE",
+                                                            "weight": "2"
+                                                        }, {
+                                                            "val": "SSCI",
+                                                            "txt": "SSCI",
+                                                            "weight": "3"
+                                                        }, {
+                                                            "val": "ESCI",
+                                                            "txt": "ESCI",
+                                                            "weight": "3"
+                                                        }, {
+                                                            "val": "\u81ea\u7136\u6307\u6570\u6742\u5fd7",
+                                                            "txt": "\u81ea\u7136\u6307\u6570\u6742\u5fd7",
+                                                            "weight": "3"
+                                                        }, {
+                                                            "val": "CSSCI",
+                                                            "txt": "CSSCI",
+                                                            "weight": "4"
+                                                        }, {
+                                                            "val": "CSSCI\u6269\u5c55\u7248",
+                                                            "txt": "CSSCI\u6269\u5c55\u7248",
+                                                            "weight": "5"
+                                                        }, {
+                                                            "val": "CSCD",
+                                                            "txt": "CSCD-C",
+                                                            "weight": "6"
+                                                        }, {
+                                                            "val": "CSCD-E",
+                                                            "txt": "CSCD-E",
+                                                            "weight": "7"
+                                                        }, {
+                                                            "val": "SCD",
+                                                            "txt": "SCD",
+                                                            "weight": "7"
+                                                        }, {
+                                                            "val": "AHCI",
+                                                            "txt": "AHCI",
+                                                            "weight": "8"
+                                                        }, {
+                                                            "val": "EI",
+                                                            "txt": "EI",
+                                                            "weight": "9"
+                                                        }, {
+                                                            "val": "ISTP",
+                                                            "txt": "CPCI-S(ISTP)",
+                                                            "weight": "10"
+                                                        }, {
+                                                            "val": "ISSHP",
+                                                            "txt": "CPCI-SSH(ISSHP)",
+                                                            "weight": "11"
+                                                        }, {
+                                                            "val": "PKU(\u4e2d\u6587\u6838\u5fc3)",
+                                                            "txt": "PKU(\u4e2d\u6587\u6838\u5fc3)",
+                                                            "weight": "12"
+                                                        }, {
+                                                            "val": "\u79d1\u7814\u6838\u5fc3",
+                                                            "txt": "\u79d1\u6280\u6838\u5fc3",
+                                                            "weight": "14"
+                                                        }, {
+                                                            "val": "\u56fd\u5bb6\u7ea7\u671f\u520a",
+                                                            "txt": "\u56fd\u5bb6\u7ea7\u671f\u520a",
+                                                            "weight": "15"
+                                                        }, {
+                                                            "val": "\u7701\u7ea7\u671f\u520a",
+                                                            "txt": "\u7701\u7ea7\u671f\u520a",
+                                                            "weight": "16"
+                                                        }, {
+                                                            "val": "\u6821\u5185\u6838\u5fc3",
+                                                            "txt": "\u6821\u5185\u6838\u5fc3",
+                                                            "weight": "17"
+                                                        }, {
+                                                            "val": "\u4f1a\u8bae\u671f\u520a",
+                                                            "txt": "\u4f1a\u8bae\u8bba\u6587",
+                                                            "weight": "18"
+                                                        }, {
+                                                            "val": "\u5176\u4ed6",
+                                                            "txt": "\u5176\u4ed6",
+                                                            "weight": "19"
+                                                        }],
+                                                        "value": "CSSCI,CSCD",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "select",
+                                                        "name": "sci_inter_jcr",
+                                                        "text": "\u56fd\u9645JCR\u5206\u533a",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "",
+                                                            "txt": "\u8bf7\u9009\u62e9\u5206\u533a"
+                                                        }, {
+                                                            "val": "JCR Q1",
+                                                            "txt": "JCR Q1"
+                                                        }, {
+                                                            "val": "JCR Q2",
+                                                            "txt": "JCR Q2"
+                                                        }, {
+                                                            "val": "JCR Q3",
+                                                            "txt": "JCR Q3"
+                                                        }, {
+                                                            "val": "JCR Q4",
+                                                            "txt": "JCR Q4"
+                                                        }, {
+                                                            "val": "\u65e0",
+                                                            "txt": "\u65e0"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "select",
+                                                        "name": "sci_china_jcr",
+                                                        "text": "\u4e2d\u79d1\u9662JCR\u5206\u533a",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "",
+                                                            "txt": "\u8bf7\u9009\u62e9\u5206\u533a"
+                                                        }, {
+                                                            "val": "\u4e00\u533a",
+                                                            "txt": "\u4e00\u533aTOP"
+                                                        }, {
+                                                            "val": "\u4e00\u533a\u975eTOP",
+                                                            "txt": "\u4e00\u533a\u975eTOP"
+                                                        }, {
+                                                            "val": "\u4e8c\u533aTOP",
+                                                            "txt": "\u4e8c\u533aTOP"
+                                                        }, {
+                                                            "val": "\u4e8c\u533a",
+                                                            "txt": "\u4e8c\u533a\u975eTOP"
+                                                        }, {
+                                                            "val": "\u4e09\u533a",
+                                                            "txt": "\u4e09\u533a"
+                                                        }, {
+                                                            "val": "\u56db\u533a",
+                                                            "txt": "\u56db\u533a"
+                                                        }, {
+                                                            "val": "\u65e0",
+                                                            "txt": "\u65e0"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "nature_indexed",
+                                                        "text": "\u81ea\u7136\u6307\u6570\u6742\u5fd7",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u5426",
+                                                            "txt": "\u5426"
+                                                        }, {
+                                                            "val": "\u662f",
+                                                            "txt": "\u662f"
+                                                        }],
+                                                        "value": "\u5426",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "wos",
+                                                        "text": "WOS\u5165\u85cf\u53f7",
+                                                        "placeholder": "\u8bf7\u8f93\u5165WOS\u5165\u85cf\u53f7",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "checkbox",
+                                                        "name": "esi",
+                                                        "text": "ESI",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": "\u70ed\u70b9",
+                                                            "txt": "\u70ed\u70b9"
+                                                        }, {
+                                                            "val": "\u9ad8\u88ab\u5f15",
+                                                            "txt": "\u9ad8\u88ab\u5f15"
+                                                        }, {
+                                                            "val": "\u65e0",
+                                                            "txt": "\u65e0"
+                                                        }],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "date",
+                                                        "name": "jurnal_puttime",
+                                                        "text": "\u53d1\u8868\u65f6\u95f4",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [{
+                                                            "val": 2006,
+                                                            "txt": "2006\u5e74"
+                                                        }, {
+                                                            "val": 2007,
+                                                            "txt": "2007\u5e74"
+                                                        }, {
+                                                            "val": 2008,
+                                                            "txt": "2008\u5e74"
+                                                        }, {
+                                                            "val": 2009,
+                                                            "txt": "2009\u5e74"
+                                                        }, {
+                                                            "val": 2010,
+                                                            "txt": "2010\u5e74"
+                                                        }, {
+                                                            "val": 2011,
+                                                            "txt": "2011\u5e74"
+                                                        }, {
+                                                            "val": 2012,
+                                                            "txt": "2012\u5e74"
+                                                        }, {
+                                                            "val": 2013,
+                                                            "txt": "2013\u5e74"
+                                                        }, {
+                                                            "val": 2014,
+                                                            "txt": "2014\u5e74"
+                                                        }, {
+                                                            "val": 2015,
+                                                            "txt": "2015\u5e74"
+                                                        }, {
+                                                            "val": 2016,
+                                                            "txt": "2016\u5e74"
+                                                        }],
+                                                        "value": "2022-07-22",
+                                                        "is_validate": "1",
+                                                        "validate": "{\"type\":\"null\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "\u8bf7\u586b\u5199\u5b8c\u6574",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "range_value",
+                                                        "text": "\u53d1\u8868\u65f6\u95f4",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"null\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "doi",
+                                                        "text": "DOI\u53f7",
+                                                        "placeholder": "\u8bf7\u8f93\u5165DOI\u53f7",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "10.1026\/j.mcm.2022.07.22",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "citations",
+                                                        "text": "\u5f15\u7528\u6b21\u6570",
+                                                        "placeholder": "\u8bf7\u8f93\u5165\u8bba\u6587\u5f15\u7528\u6b21\u6570",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "language",
+                                                        "text": "\u8bed\u8a00\u7c7b\u578b",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "1",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "citations_2018",
+                                                        "text": "2018\u88ab\u5f15",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "citations_2017",
+                                                        "text": "2017\u88ab\u5f15",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "citations_2016",
+                                                        "text": "2016\u88ab\u5f15",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "citations_2015",
+                                                        "text": "2015\u88ab\u5f15",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "hidden",
+                                                        "name": "citations_2014",
+                                                        "text": "2014\u88ab\u5f15",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "0",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "keywords",
+                                                        "text": "\u5173\u952e\u8bcd",
+                                                        "placeholder": "\u5982\uff1a\u673a\u5668\u5b66\u4e60,\u751f\u7269\u5316\u5b66",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "page_index",
+                                                        "text": "\u8d77\u6b62\u9875\u7801",
+                                                        "placeholder": "\u5982\uff1a21~24",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "name": "institutions",
+                                                        "text": "",
+                                                        "type": "complex",
+                                                        "is_complex": "1",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"no-validate\", \"min\":\"0\", \"max\":\"0\"}"
+                                                    }, {
+                                                        "name": "co_authors",
+                                                        "text": "",
+                                                        "type": "complex",
+                                                        "is_complex": "1",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"no-validate\", \"min\":\"0\", \"max\":\"0\"}"
+                                                    }],
+                                                    "hidden_form": [{
+                                                        "type": "text",
+                                                        "name": "impact_factor",
+                                                        "text": "\u5f71\u54cd\u56e0\u5b50",
+                                                        "placeholder": "\u5982\uff1a3.102",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "batch",
+                                                        "text": "\u5377\u53f7",
+                                                        "placeholder": "\u5982\uff1a36",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "issue",
+                                                        "text": "\u671f\u53f7",
+                                                        "placeholder": "\u5982\uff1a12",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "issn",
+                                                        "text": "ISSN\u53f7",
+                                                        "placeholder": "\u8bf7\u8f93\u5165ISSN\u53f7",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "cn",
+                                                        "text": "CN\u53f7",
+                                                        "placeholder": "\u8bf7\u8f93\u5165CN\u53f7",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "text",
+                                                        "name": "abstract",
+                                                        "text": "\u6458\u8981(Abstract)",
+                                                        "placeholder": "\u8bf7\u8f93\u5165\u6458\u8981",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"int\", \"min\":\"0\", \"max\":\"0\"}",
+                                                        "error_msg": "",
+                                                        "is_table_view": "0",
+                                                        "is_date": 0
+                                                    }, {
+                                                        "type": "textarea",
+                                                        "name": "description",
+                                                        "text": "\u5907\u6ce8\u4fe1\u606f",
+                                                        "placeholder": "",
+                                                        "desc": "",
+                                                        "dataset": [],
+                                                        "value": "",
+                                                        "is_validate": "0",
+                                                        "validate": "{\"type\":\"null\"}",
+                                                        "error_msg": "\u8bf7\u586b\u5199\u5907\u6ce8\u4fe1\u606f",
+                                                        "is_table_view": 0,
+                                                        "is_date": 0
+                                                    }],
+                                                    "researches": [{
+                                                        "id": "1926297",
+                                                        "title": "\u793a\u4f8b\uff1a\u73b0\u91d1\u4e2d\u56fd\u91d1\u878d\u5b89\u5168\u4e0e\u7a33\u5b9a",
+                                                        "source": "\u6559\u80b2\u8d39\u9644\u52a0",
+                                                        "start_year": "2015"
+                                                    }],
+                                                    "related_researches": [],
+                                                    "institutions": [],
+                                                    "doc_institutions": [],
+                                                    "commonEnNickname": [],
+                                                    'enFormat': 1,
+                                                    'isPrivate': 1,
+                                                    'insRankOrder': [],
+                                                    'authorIdentities': ["\u8001\u5e08", "\u535a\u58eb\u751f", "\u7855\u58eb\u751f", "\u672c\u79d1\u751f", "\u5176\u4ed6"],
+                                                    'joinedInstitutions': [],
+                                                    'chooseInstitutions': [],
+                                                    'chooseAuthors': []
+                                                }
+                                            </script>
+                                
+                                
+                                
+                                       
+                                      
+                                    </body>
+                                
+                                
+                                    <script src="https://www.acagrid.com/static/application/src/lib/xlsx/xlsx.full.min.js"></script>
+                                    <script type="text/javascript" src="https://www.acagrid.com/static/application/src/lib/mtr-datepicker/mtr-datepicker.js"></script>
+                                    <script type="text/javascript" src="https://img.okay.do/acagrid/static/build/model/build_cb750b48017b2dbd560d.js"></script>
+                                
+                                </div>
+                                <!-- Address and Contact ends -->
+
+
+                                <!-- Product Details ends -->
+
+                                <!-- Invoice Total starts -->
+
+                                <!-- Invoice Total ends -->
+
+                                <hr class="invoice-spacing mt-0" />
+
+                  
+                            </div>
+                        </div>
+                        <!-- Invoice Edit Left ends -->
+
+                        <!-- Invoice Edit Right starts -->
+                        <div class="col-xl-3 col-md-4 col-12">
+                            <div class="card">
+                                <div class="card-body" style="   box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%); position: fixed;right: 123px;top: 150px;_position: absolute;_top: expression(eval(document.documentElement.scrollTop+30));">
+                                    <button class="btn btn-primary w-100 mb-75" data-bs-toggle="modal">
+                                        上传
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary w-100 mb-75">保存到草稿箱</button>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Invoice Edit Right ends -->
+                    </div>
+
+               
+
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+   
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="../app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../app-assets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
+    <script src="../app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script type="text/javascript" src="../app-assets/js/scripts/pdf/FileSaver.js"></script>
+    <script type="text/javascript" src="../app-assets/js/scripts/pdf/pdf.worker.js"></script>
+    <script type="text/javascript" src="../app-assets/js/scripts/pdf/jszip.js"></script>
+    <script type="text/javascript" src="../app-assets/js/scripts/pdf/pdf.js"></script>
+    <script src="../app-assets/js/scripts/pdf/html2canvas.js"></script>
+    <script src="../app-assets/js/scripts/pdf/jspdf.umd.min.js"></script>
+    <script src="../app-assets/js/core/app-menu.js"></script>
+    <script src="../app-assets/js/core/app.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="../app-assets/js/scripts/pages/app-invoice.js"></script>
+    <script src="../app-assets/js/scripts/pages/app-edit.js"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+</body>
+<!-- END: Body-->
+
+</html>
