@@ -1,0 +1,1 @@
+[![DeepSource](https://deepsource.io/gh/Dough-su/Academic-assistant.svg/?label=active+issues&show_trend=true&token=7Qn9m7XStw3BtjB4TVhYgjyR)](https://deepsource.io/gh/Dough-su/Academic-assistant/?ref=repository-badge)
