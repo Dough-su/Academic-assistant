@@ -6,7 +6,30 @@
   Author: PIXINVENT
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+window.onload = function() {
+  document.querySelector("#register").onclick = function() {
+     $.ajax({
+        type: "POST",
+        url: "../ashx/userinfo.ashx",
+        data: {
+          username:$("#register-username").val(),
+          useremail:$("#register-email").val(),
+          userpwd:$("#register-password").val(),
+          meth:"register",
+          url:window.location.host
+        },
+        success: function(data) {
+          if(data=="注册成功")
+           window.location.href="auth-login.html";
+          toastr['error'](data, '错误!', {
+            closeButton: true,
+            tapToDismiss: false,
+        });
+        }
 
+     })
+  }
+}
 $(function () {
   ('use strict');
 

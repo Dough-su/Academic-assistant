@@ -31,20 +31,27 @@ namespace liveweb
             string userid= context.Request.Params["userid"].ToString();
 
 
-            //根据参数调用不同的方法
-            SqlConnection conn = new SqlConnection();
 
             switch (meth)
             {
-               
-              
-            
+
+                case "recycled":
+                    recycled(context);
+                    break;
+                case "listcount":
+                    listcount(context);
+                    break;    
+
+
+
 
                 default:
+                    SqlConnection conn = new SqlConnection();
+
                     string connectionString = ConfigurationManager.ConnectionStrings["mssql"].ConnectionString;
                     conn.ConnectionString = connectionString;
                     conn.Open();
-                    string sql = "select * from " + meth + " where userid='" + userid + "'";
+                    string sql = "select * from " + meth + " where userid='" + userid + "'AND recycle is NULL OR recycle !=1";
                     //定义字符串，" "中的字符串可以在sql server中运行，运行结果就是一会要读取的数据表，表名为上面数据库名称里面的表； 
                     SqlCommand sqlcomm = new SqlCommand(sql, conn);
                     //连接到表
@@ -67,7 +74,46 @@ namespace liveweb
                 return false;
             }
         }
-        
+        private string GetParams(HttpContext context, string str)
+        {
+            string str_params = context.Request.Params[str].ToString();
+            return str_params;
+        }
+        public void recycled(HttpContext context) {
+            SqlConnection conn = new SqlConnection();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["mssql"].ConnectionString;
+            conn.ConnectionString = connectionString;
+            conn.Open();
+            string sql = "exec recycle "+GetParams(context,"userid")+"";
+            //定义字符串，" "中的字符串可以在sql server中运行，运行结果就是一会要读取的数据表，表名为上面数据库名称里面的表； 
+            SqlCommand sqlcomm = new SqlCommand(sql, conn);
+            //连接到表
+            SqlDataAdapter dataAdpter = new SqlDataAdapter(sqlcomm);//通过数据适配器执行命令
+            DataTable dt = new DataTable();//创建一张临时数据表
+            dataAdpter.Fill(dt);//将命令执行的结果存入临时数据表
+            conn.Dispose();
+
+            context.Response.Write(ToJson(dt));
+        }
+        private void listcount(HttpContext context)
+        {
+            SqlConnection conn = new SqlConnection();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["mssql"].ConnectionString;
+            conn.ConnectionString = connectionString;
+            conn.Open();
+            string sql = "exec listcount "+GetParams(context,"userid")+"";
+            SqlCommand sqlcomm = new SqlCommand(sql, conn);
+            //连接到表
+            SqlDataAdapter dataAdpter = new SqlDataAdapter(sqlcomm);//通过数据适配器执行命令
+            DataTable dt = new DataTable();//创建一张临时数据表
+            dataAdpter.Fill(dt);//将命令执行的结果存入临时数据表
+            conn.Dispose();
+
+            context.Response.Write(ToJson(dt));
+        }
+
         //对象转换为Json字符串 
         public static string ToJson(object jsonObject)
         {

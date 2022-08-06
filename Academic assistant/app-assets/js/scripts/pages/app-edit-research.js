@@ -78,6 +78,13 @@ function renderImg(pdfFile, pageNumber, canvasContext) {
     return;
 };
 window.onload = function () {
+        fetch('https://v1.hitokoto.cn')
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById('hitokoto')
+                hitokoto.innerText = data.hitokoto
+            })
+            .catch(console.error)
     if (id != "../upload/null.pdf") {
         $(".no-pic").css("display", "none");
         $(".pic.row").css("display", "block");

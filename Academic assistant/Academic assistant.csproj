@@ -1264,7 +1264,7 @@
     <Content Include="app-assets\js\scripts\pages\app-edit-research.js" />
     <Content Include="app-assets\js\scripts\pages\app-edit-software.js" />
     <Content Include="app-assets\js\scripts\pages\app-edit-stuaward.js" />
-    <Content Include="app-assets\js\scripts\pages\app-edit.js" />
+    <Content Include="app-assets\js\scripts\pages\app-edit-paper.js" />
     <Content Include="app-assets\js\scripts\pages\app-email.js" />
     <Content Include="app-assets\js\scripts\pages\app-email.min.js" />
     <Content Include="app-assets\js\scripts\pages\app-file-manager.js" />
@@ -1275,8 +1275,8 @@
     <Content Include="app-assets\js\scripts\pages\app-invoice.min.js" />
     <Content Include="app-assets\js\scripts\pages\app-kanban.js" />
     <Content Include="app-assets\js\scripts\pages\app-kanban.min.js" />
-    <Content Include="app-assets\js\scripts\pages\app-lunwen.js" />
-    <Content Include="app-assets\js\scripts\pages\app-lunwen.min.js" />
+    <Content Include="app-assets\js\scripts\pages\app-paper.js" />
+    <Content Include="app-assets\js\scripts\pages\app-paper.min.js" />
     <Content Include="app-assets\js\scripts\pages\app-others.js" />
     <Content Include="app-assets\js\scripts\pages\app-patent.js" />
     <Content Include="app-assets\js\scripts\pages\app-preview.js" />
@@ -1837,6 +1837,7 @@
     <Content Include="app-assets\vendors\js\unison-js\unison-js.min.js" />
     <Content Include="app-assets\vendors\js\vendors.min.js" />
     <Content Include="app-assets\vendors\js\waves\waves.min.js" />
+    <Content Include="Email\welcome.html" />
     <Content Include="html\.idea\.idea.html.dir\.idea\encodings.xml" />
     <Content Include="html\.idea\.idea.html.dir\.idea\indexLayout.xml" />
     <Content Include="html\.idea\.idea.html.dir\.idea\projectSettingsUpdater.xml" />
@@ -1860,17 +1861,17 @@
     <Content Include="html\app-edit-others.html" />
     <Content Include="html\app-edit-patent.html" />
     <Content Include="html\app-edit-report.html" />
-    <Content Include="html\app-edit-resarch.html" />
+    <Content Include="html\app-edit-research.html" />
     <Content Include="html\app-edit-software.html" />
     <Content Include="html\app-edit-stuaward.html" />
-    <Content Include="html\app-edit.html" />
+    <Content Include="html\app-edit-paper.html" />
     <Content Include="html\app-email.html" />
     <Content Include="html\app-file-manager.html" />
     <Content Include="html\app-invoice-add.html" />
     <Content Include="html\app-invoice-preview.html" />
     <Content Include="html\app-invoice-print.html" />
     <Content Include="html\app-kanban.html" />
-    <Content Include="html\app-lunwen.html" />
+    <Content Include="html\app-paper.html" />
     <Content Include="html\app-others.html" />
     <Content Include="html\app-patent.html" />
     <Content Include="html\app-preview.html" />
@@ -1887,7 +1888,7 @@
     <Content Include="html\auth-forgot-password-basic.html" />
     <Content Include="html\auth-forgot-password-cover.html" />
     <Content Include="html\auth-login-basic.html" />
-    <Content Include="html\auth-login-cover.html" />
+    <Content Include="html\auth-login.html" />
     <Content Include="html\auth-register-basic.html" />
     <Content Include="html\auth-register-cover.html" />
     <Content Include="html\auth-register-multisteps.html" />
@@ -1999,6 +2000,9 @@
     <Compile Include="ashx\bianji.ashx.cs">
       <DependentUpon>bianji.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\delete.ashx.cs">
+      <DependentUpon>delete.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\getdata.ashx.cs">
       <DependentUpon>getdata.ashx</DependentUpon>
     </Compile>
@@ -2073,6 +2077,7 @@
     <Content Include="ashx\sidebar.ashx" />
     <Content Include="ashx\upload.ashx" />
     <Content Include="ashx\userinfo.ashx" />
+    <Content Include="ashx\delete.ashx" />
     <None Include="packages.config" />
     <Content Include="upload\1645607516384.pdf" />
     <Content Include="upload\1658474729654.pdf" />
@@ -2217,6 +2222,7 @@
     <Content Include="upload\1658676216680.pdf" />
     <Content Include="upload\blob.pdf" />
     <Content Include="upload\test.pdf" />
+    <Content Include="upload\title.pdf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
